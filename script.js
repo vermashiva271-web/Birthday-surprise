@@ -79,3 +79,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+document.querySelectorAll('.main-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const music = document.getElementById('bg-music');
+        if (music) {
+            music.play();
+        }
+    });
+});
+w
