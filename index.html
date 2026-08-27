@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A Little Surprise ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loader"><div class="loader-heart">♥</div><p>Preparing your surprise...</p></div>
+
+<div class="topbar"><span>FOR YOU</span><button id="soundBtn" aria-label="Toggle music">🔇</button></div>
+<div id="progress"><i></i></div>
+
+<main>
+<section class="screen active" data-page="0">
+  <div class="aurora"></div><div class="stars"></div>
+  <div class="hero">
+    <p class="eyebrow">A little something, made just for you</p>
+    <h1>Hey, <span data-name>YOUR NAME</span> <b>♥</b></h1>
+    <p class="lead">There are a few things I wanted to say...</p>
+    <button class="primary next">Open the surprise <span>→</span></button>
+  </div>
+</section>
+
+<section class="screen" data-page="1">
+  <div class="hero">
+    <div class="floating-cake">🎂</div>
+    <p class="eyebrow">Today is your day</p>
+    <h2>Happy Birthday,<br><span data-name>YOUR NAME</span>! ✨</h2>
+    <p class="lead">I hope this new year of your life brings you countless smiles, beautiful memories and reasons to feel proud of yourself.</p>
+    <button class="primary next">Continue <span>→</span></button>
+  </div>
+</section>
+
+<section class="screen" data-page="2">
+  <div class="wide">
+    <p class="eyebrow">Some moments</p>
+    <h2>Memories that deserve a place here 📸</h2>
+    <div class="polaroids">
+      <figure><img src="assets/photos/photo1.jpg"><figcaption>One beautiful moment</figcaption></figure>
+      <figure><img src="assets/photos/photo2.jpg"><figcaption>A memory to keep</figcaption></figure>
+      <figure><img src="assets/photos/photo3.jpg"><figcaption>And another one ♥</figcaption></figure>
+    </div>
+    <button class="primary next">There's more <span>→</span></button>
+  </div>
+</section>
+
+<section class="screen" data-page="3">
+  <div class="hero">
+    <p class="eyebrow">A message for you</p>
+    <div class="envelope" id="envelope">
+      <div class="envelope-flap"></div><div class="envelope-paper">💌</div>
+      <span>Tap to open</span>
+    </div>
+    <article class="letter" id="letter">
+      <p>Some people make ordinary days feel a little more special just by being themselves.</p>
+      <p>So today, I just want to say: keep smiling, keep dreaming, and never forget how special you are.</p>
+      <p>Happy Birthday once again. ❤️</p>
+    </article>
+    <button class="primary next">Next surprise <span>→</span></button>
+  </div>
+</section>
+
+<section class="screen" data-page="4">
+  <div class="hero">
+    <p class="eyebrow">I saved one thing especially for you</p>
+    <h2>There's a gift waiting... 🎁</h2>
+    <div class="gift-wrap" id="gift">
+      <div class="bow bow1"></div><div class="bow bow2"></div>
+      <div class="gift-lid"></div><div class="gift-box"></div><div class="gift-ribbon"></div>
+      <div class="spark s1">✦</div><div class="spark s2">✦</div><div class="spark s3">✦</div>
+    </div>
+    <p class="tap">Tap the gift</p>
+    <div class="reveal" id="reveal">
+      <img src="assets/photos/special.jpg">
+      <h3>A little something special ♥</h3>
+      <p>Because some moments are worth making unforgettable.</p>
+    </div>
+    <button class="primary next">Keep going <span>→</span></button>
+  </div>
+</section>
+
+<section class="screen" data-page="5">
+  <div class="hero">
+    <p class="eyebrow">Three little reminders</p>
+    <div class="memory-cards">
+      <div><span>01</span><strong>Keep smiling</strong><small>Your smile can brighten more than you know.</small></div>
+      <div><span>02</span><strong>Keep dreaming</strong><small>Big dreams are worth chasing.</small></div>
+      <div><span>03</span><strong>Keep being you</strong><small>That's already something beautiful.</small></div>
+    </div>
+    <button class="primary next">One final thing... <span>→</span></button>
+  </div>
+</section>
+
+<section class="screen final" data-page="6">
+  <div class="fireflies"></div>
+  <div class="hero">
+    <div class="heart-big">♥</div>
+    <p class="eyebrow">And finally...</p>
+    <h2>Happy Birthday,<br><span data-name>YOUR NAME</span>! 🎂</h2>
+    <p class="lead">May this year be kinder, brighter and full of moments you will want to remember forever.</p>
+    <p class="signature">— From someone who cares ♥</p>
+    <button class="primary" id="replay">Replay the surprise ↻</button>
+  </div>
+</section>
+</main>
+
+<audio id="music" loop><source src="assets/music/birthday.mp3" type="audio/mpeg"></audio>
+<script src="script.js"></script>
+</body>
+</html>
