@@ -1,12 +1,18 @@
-// Birthday Person Name (yahan naam change karein)
 const NAME = "ANSHUU ❤️";
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Name Injector
+    // 1. Preloader Hide Karein
+    const loader = document.getElementById("loader") || document.querySelector(".loader") || document.querySelector(".preloader");
+    if (loader) {
+        loader.style.display = "none";
+    }
+    document.body.classList.remove("loading");
+
+    // 2. Name Injector
     const nameElements = document.querySelectorAll(".birthday-name, #person-name");
     nameElements.forEach(el => el.textContent = NAME);
 
-    // 2. Audio Setup & Play on First Interaction
+    // 3. Audio Setup
     const bgMusic = new Audio("assets/music/birthday.mp3");
     bgMusic.loop = true;
 
@@ -19,11 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Screen tap or button click par audio start
     document.body.addEventListener("click", startAudio, { once: true });
     document.body.addEventListener("touchstart", startAudio, { once: true });
 
-    // 3. Envelope / Gift Box Interactive Animation
+    // 4. Interactive Elements
     const interactiveElements = document.querySelectorAll(".envelope, .gift-box, .open-btn");
     interactiveElements.forEach(item => {
         item.addEventListener("click", () => {
@@ -32,10 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 4. Smooth Scroll / Cinematic Screen Navigation
+    // 5. Navigation
     const navButtons = document.querySelectorAll("[data-next-screen]");
     navButtons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
+        btn.addEventListener("click", () => {
             const nextId = btn.getAttribute("data-next-screen");
             const targetScreen = document.getElementById(nextId);
             if (targetScreen) {
