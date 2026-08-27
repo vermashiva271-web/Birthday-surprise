@@ -1,31 +1,53 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Audio Setup
-    const bgMusic = new Audio("assets/music/birthday.mp3");
-    bgMusic.loop = true;
+    const welcomeScreen = document.getElementById("welcome-screen");
+    const surpriseScreen = document.getElementById("surprise-screen");
+    const openBtn = document.getElementById("open-surprise-btn");
+    const bgMusic = document.getElementById("bg-music");
+    const musicBtn = document.getElementById("music-btn");
 
-    // 2. Open Surprise Button Handler
-    const openBtn = document.querySelector(".open-btn") || document.getElementById("open-btn") || document.querySelector("button");
-    const mainContent = document.getElementById("main-content") || document.querySelector(".main-content") || document.querySelector(".surprise-box");
-    const welcomeScreen = document.querySelector(".welcome-screen") || document.querySelector(".hero-container") || document.querySelector("div");
+    let isPlaying = false;
 
-    if (openBtn) {
-        openBtn.addEventListener("click", () => {
-            // Play Music
-            bgMusic.play().catch(err => console.log("Audio play error:", err));
-            
-            // Hide welcome/button screen and show content
-            if (welcomeScreen && welcomeScreen !== openBtn.parentElement) {
-                welcomeScreen.style.display = "none";
-            } else {
-                openBtn.style.display = "none";
-            }
+    // Open Surprise Button Click Handler
+    openBtn.addEventListener("click", () => {
+        // Hide Screen 1
+        welcomeScreen.classList.remove("active");
+        welcomeScreen.classList.add("hidden");
 
-            if (mainContent) {
-                mainContent.style.display = "block";
-            }
-            
-            // Fallback: Scroll down or reload view if needed
-            window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-        });
+        // Show Screen 2
+        setTimeout(() => {
+            surpriseScreen.classList.remove("hidden");
+            surpriseScreen.classList.add("active");
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 300);
+
+        // Play Music
+        playAudio();
+    });
+
+    // Audio Control Function
+    function playAudio() {
+        if (bgMusic) {
+            bgMusic.play().then(() => {
+                isPlaying = true;
+                musicBtn.textContent = "🔊";
+            }).catch(err => {
+                console.log("Autoplay blocked or audio missing:", err);
+            });
+        }
     }
+
+    // Toggle Music Button Click
+    musicBtn.addEventListener("click", () => {
+        if (!bgMusic) return;
+
+        if (isPlaying) {
+            bgMusic.pause();
+            isPlaying = false;
+            musicBtn.textContent = "🔇";
+        } else {
+            bgMusic.play();
+            isPlaying = true;
+            musicBtn.textContent = "🔊";
+        }
+    });
 });
