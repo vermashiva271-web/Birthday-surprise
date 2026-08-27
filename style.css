@@ -14,7 +14,7 @@ html, body {
     color: #ffffff;
 }
 
-/* Music Button */
+/* Floating Music Button */
 .music-toggle {
     position: fixed;
     top: 15px;
@@ -31,7 +31,7 @@ html, body {
     cursor: pointer;
 }
 
-/* Full Screen Viewport */
+/* Full Screen Container */
 .storybook-container {
     width: 100vw;
     height: 100vh;
@@ -63,12 +63,12 @@ html, body {
     height: 100%;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    padding: 20px 15px 30px 15px; /* Bottom padding thoda badha diya taaki buttons ke niche gap rahe */
+    padding: 15px 15px 20px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Content ko exact Center me alignment mila */
-    gap: 12px; /* Content ke beech proper gap */
+    justify-content: center;
+    gap: 8px;
     text-align: center;
 }
 
@@ -80,7 +80,7 @@ html, body {
 }
 
 .heart-icon {
-    font-size: 44px;
+    font-size: 42px;
 }
 
 .glow-text {
@@ -97,21 +97,24 @@ html, body {
 }
 
 .desc {
-    font-size: 13px;
+    font-size: 13.5px;
     color: #b8b5ff;
     line-height: 1.4;
     padding: 0 10px;
+    max-width: 90vw;
+    margin-bottom: 5px;
 }
 
-/* Perfect Scaled Photo Frame */
+/* Larger Vertical Photo Frame */
 .photo-frame {
-    width: 90vw;
+    width: 88vw;
     max-width: 400px;
-    height: 40vh; /* Photo height thodi kam ki taaki buttons easily upar shift ho jayein */
+    height: 48vh; /* Vertically bigger */
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 4px;
 }
 
 .photo-frame img {
@@ -121,7 +124,7 @@ html, body {
 }
 
 .card-content h2 {
-    font-size: 19px;
+    font-size: 18px;
     color: #ff758c;
 }
 
@@ -133,19 +136,19 @@ html, body {
 }
 
 .story-text {
-    font-size: 13.5px;
+    font-size: 13px;
     line-height: 1.4;
     color: #e2e2e2;
     padding: 0 10px;
     max-width: 90vw;
 }
 
-/* Upward Adjusted Buttons */
+/* Equal Standard Buttons */
 .btn-group {
     display: flex;
     gap: 12px;
-    width: 90vw;
-    max-width: 350px;
+    width: 88vw;
+    max-width: 320px;
     justify-content: center;
     margin-top: 5px;
 }
@@ -161,6 +164,14 @@ html, body {
     cursor: pointer;
     box-shadow: 0 6px 18px rgba(255, 65, 108, 0.4);
     flex: 1;
+    display: inline-block;
+}
+
+/* First Page Button Sizing Fix */
+#page-1 .main-btn {
+    flex: none;
+    width: 88vw;
+    max-width: 250px;
 }
 
 .nav-btn {
