@@ -1,42 +1,70 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const welcomeScreen = document.getElementById("welcome-screen");
-    const surpriseScreen = document.getElementById("surprise-screen");
-    const openBtn = document.getElementById("open-surprise-btn");
+    const pages = document.querySelectorAll(".page");
+    const nextBtns = document.querySelectorAll(".next-btn");
+    const prevBtns = document.querySelectorAll(".prev-btn");
+    const restartBtn = document.querySelector(".restart-btn");
     const bgMusic = document.getElementById("bg-music");
     const musicBtn = document.getElementById("music-btn");
 
+    let currentPage = 0;
     let isPlaying = false;
 
-    // Open Surprise Button Click Handler
-    openBtn.addEventListener("click", () => {
-        // Hide Screen 1
-        welcomeScreen.classList.remove("active");
-        welcomeScreen.classList.add("hidden");
+    // Show current page function
+    function showPage(index) {
+        pages.forEach((page, i) => {
+            if (i === index) {
+                page.classList.remove("hidden");
+                page.classList.add("active");
+            } else {
+                page.classList.remove("active");
+                page.classList.add("hidden");
+            }
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-        // Show Screen 2
-        setTimeout(() => {
-            surpriseScreen.classList.remove("hidden");
-            surpriseScreen.classList.add("active");
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 300);
-
-        // Play Music
-        playAudio();
-    });
-
-    // Audio Control Function
+    // Audio Control
     function playAudio() {
-        if (bgMusic) {
+        if (bgMusic && !isPlaying) {
             bgMusic.play().then(() => {
                 isPlaying = true;
                 musicBtn.textContent = "🔊";
             }).catch(err => {
-                console.log("Autoplay blocked or audio missing:", err);
+                console.log("Audio play error:", err);
             });
         }
     }
 
-    // Toggle Music Button Click
+    // Next Page Buttons
+    nextBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            playAudio(); // Music plays when clicking Start/Next
+            if (currentPage < pages.length - 1) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        });
+    });
+
+    // Previous Page Buttons
+    prevBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            if (currentPage > 0) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        });
+    });
+
+    // Restart Story Button
+    if (restartBtn) {
+        restartBtn.addEventListener("click", () => {
+            currentPage = 0;
+            showPage(currentPage);
+        });
+    }
+
+    // Toggle Music Button
     musicBtn.addEventListener("click", () => {
         if (!bgMusic) return;
 
