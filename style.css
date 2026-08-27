@@ -8,15 +8,13 @@
 html, body {
     width: 100%;
     height: 100%;
-    max-width: 100%;
-    max-height: 100%;
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #0f0c20, #1a103c, #2b0b3a);
     color: #ffffff;
 }
 
-/* Music Floating Button */
+/* Music Button */
 .music-toggle {
     position: fixed;
     top: 15px;
@@ -33,7 +31,7 @@ html, body {
     cursor: pointer;
 }
 
-/* Full Screen Viewport Container */
+/* Full Screen Viewport */
 .storybook-container {
     width: 100vw;
     height: 100vh;
@@ -65,11 +63,12 @@ html, body {
     height: 100%;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    padding: 25px 20px;
+    padding: 20px 15px 30px 15px; /* Bottom padding thoda badha diya taaki buttons ke niche gap rahe */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center; /* Content ko exact Center me alignment mila */
+    gap: 12px; /* Content ke beech proper gap */
     text-align: center;
 }
 
@@ -81,11 +80,11 @@ html, body {
 }
 
 .heart-icon {
-    font-size: 50px;
+    font-size: 44px;
 }
 
 .glow-text {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
     background: linear-gradient(45deg, #ff7eb3, #ff758c, #ff9a9e);
     -webkit-background-clip: text;
@@ -93,22 +92,22 @@ html, body {
 }
 
 .subtitle {
-    font-size: 16px;
+    font-size: 15px;
     color: #dcd6f7;
 }
 
 .desc {
-    font-size: 14px;
+    font-size: 13px;
     color: #b8b5ff;
-    line-height: 1.5;
+    line-height: 1.4;
     padding: 0 10px;
 }
 
-/* Dynamic Fit Photo Frame */
+/* Perfect Scaled Photo Frame */
 .photo-frame {
-    width: 100%;
-    max-width: 450px;
-    height: 48vh;
+    width: 90vw;
+    max-width: 400px;
+    height: 40vh; /* Photo height thodi kam ki taaki buttons easily upar shift ho jayein */
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
@@ -122,39 +121,41 @@ html, body {
 }
 
 .card-content h2 {
-    font-size: 20px;
+    font-size: 19px;
     color: #ff758c;
 }
 
 .name-title {
     font-family: 'Great Vibes', cursive;
-    font-size: 48px;
+    font-size: 44px;
     color: #fff;
     text-shadow: 0 0 15px rgba(255, 117, 140, 0.8);
 }
 
 .story-text {
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 13.5px;
+    line-height: 1.4;
     color: #e2e2e2;
     padding: 0 10px;
+    max-width: 90vw;
 }
 
-/* Buttons Styling */
+/* Upward Adjusted Buttons */
 .btn-group {
     display: flex;
     gap: 12px;
-    width: 100%;
+    width: 90vw;
     max-width: 350px;
     justify-content: center;
+    margin-top: 5px;
 }
 
 .main-btn {
     background: linear-gradient(45deg, #ff416c, #ff4b2b);
     border: none;
-    padding: 14px 24px;
+    padding: 12px 20px;
     color: white;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     border-radius: 30px;
     cursor: pointer;
@@ -165,11 +166,10 @@ html, body {
 .nav-btn {
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 14px 20px;
+    padding: 12px 18px;
     color: white;
     font-size: 14px;
     font-weight: 500;
     border-radius: 30px;
     cursor: pointer;
 }
-1
