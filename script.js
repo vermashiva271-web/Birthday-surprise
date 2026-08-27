@@ -1,51 +1,31 @@
-const NAME = "ANSHUU ❤️";
-
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Preloader Hide Karein
-    const loader = document.getElementById("loader") || document.querySelector(".loader") || document.querySelector(".preloader");
-    if (loader) {
-        loader.style.display = "none";
-    }
-    document.body.classList.remove("loading");
-
-    // 2. Name Injector
-    const nameElements = document.querySelectorAll(".birthday-name, #person-name");
-    nameElements.forEach(el => el.textContent = NAME);
-
-    // 3. Audio Setup
+    // 1. Audio Setup
     const bgMusic = new Audio("assets/music/birthday.mp3");
     bgMusic.loop = true;
 
-    let musicStarted = false;
-    const startAudio = () => {
-        if (!musicStarted) {
-            bgMusic.play().then(() => {
-                musicStarted = true;
-            }).catch(err => console.log("Audio play deferred:", err));
-        }
-    };
+    // 2. Open Surprise Button Handler
+    const openBtn = document.querySelector(".open-btn") || document.getElementById("open-btn") || document.querySelector("button");
+    const mainContent = document.getElementById("main-content") || document.querySelector(".main-content") || document.querySelector(".surprise-box");
+    const welcomeScreen = document.querySelector(".welcome-screen") || document.querySelector(".hero-container") || document.querySelector("div");
 
-    document.body.addEventListener("click", startAudio, { once: true });
-    document.body.addEventListener("touchstart", startAudio, { once: true });
-
-    // 4. Interactive Elements
-    const interactiveElements = document.querySelectorAll(".envelope, .gift-box, .open-btn");
-    interactiveElements.forEach(item => {
-        item.addEventListener("click", () => {
-            item.classList.toggle("open");
-            startAudio();
-        });
-    });
-
-    // 5. Navigation
-    const navButtons = document.querySelectorAll("[data-next-screen]");
-    navButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const nextId = btn.getAttribute("data-next-screen");
-            const targetScreen = document.getElementById(nextId);
-            if (targetScreen) {
-                targetScreen.scrollIntoView({ behavior: "smooth" });
+    if (openBtn) {
+        openBtn.addEventListener("click", () => {
+            // Play Music
+            bgMusic.play().catch(err => console.log("Audio play error:", err));
+            
+            // Hide welcome/button screen and show content
+            if (welcomeScreen && welcomeScreen !== openBtn.parentElement) {
+                welcomeScreen.style.display = "none";
+            } else {
+                openBtn.style.display = "none";
             }
+
+            if (mainContent) {
+                mainContent.style.display = "block";
+            }
+            
+            // Fallback: Scroll down or reload view if needed
+            window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
         });
-    });
+    }
 });
