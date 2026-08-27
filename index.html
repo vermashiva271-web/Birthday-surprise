@@ -17,58 +17,113 @@
     <!-- Music Toggle Floating Button -->
     <button id="music-btn" class="music-toggle" aria-label="Toggle Music">🎵</button>
 
-    <!-- Screen 1: Welcome & Surprise Envelope -->
-    <div id="welcome-screen" class="screen active">
-        <div class="card-container">
-            <div class="heart-icon">💖</div>
-            <h1 class="glow-text">A Special Surprise</h1>
-            <p class="subtitle">Created with love for <strong>ANSHUU ❤️</strong></p>
-            
-            <button id="open-surprise-btn" class="main-btn">
-                <span>Open Surprise ✨</span>
-            </button>
+    <!-- Container for All Story Pages -->
+    <div class="storybook-container">
+
+        <!-- Page 1: Welcome Screen -->
+        <div class="page active" id="page-1">
+            <div class="card-content text-center">
+                <div class="heart-icon">🎁</div>
+                <h1 class="glow-text">A Story For You</h1>
+                <p class="subtitle">Happy Birthday <strong>ANSHUU ❤️</strong></p>
+                <p class="desc">Swipe or tap Next to walk through our sweet memories & messages!</p>
+                <button class="main-btn next-btn">Start Journey ✨</button>
+            </div>
         </div>
-    </div>
 
-    <!-- Screen 2: Main Birthday Content -->
-    <div id="surprise-screen" class="screen hidden">
-        <header class="birthday-header">
-            <h1 class="wishes-title">Happy Birthday</h1>
-            <h2 class="name-title">ANSHUU ❤️</h2>
-            <p class="sub-wishes">Wishing you endless happiness, laughter, and magical moments!</p>
-        </header>
-
-        <!-- Interactive Gift Card -->
-        <section class="section-card message-card">
-            <h3>💌 A Birthday Message</h3>
-            <p class="message-text">
-                May your special day be filled with warm smiles, joyful memories, and everything that brings delight to your heart! Happy Birthday! 🎂✨
-            </p>
-        </section>
-
-        <!-- Photo Gallery Grid -->
-        <section class="section-card gallery-section">
-            <h3>📸 Sweet Memories</h3>
-            <div class="photo-grid">
+        <!-- Page 2: Memory 1 -->
+        <div class="page hidden" id="page-2">
+            <div class="card-content">
+                <span class="page-number">Page 1 of 6</span>
                 <div class="photo-frame">
-                    <img src="assets/photos/photo1.jpg" alt="Memory 1" onerror="this.src='https://images.unsplash.com/photo-1513151233558-d860c5398176?w=500&auto=format&fit=crop'">
+                    <img src="assets/photos/photo1.jpg" alt="Memory 1" onerror="this.src='https://images.unsplash.com/photo-1513151233558-d860c5398176?w=600&auto=format&fit=crop'">
                 </div>
-                <div class="photo-frame">
-                    <img src="assets/photos/photo2.jpg" alt="Memory 2" onerror="this.src='https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500&auto=format&fit=crop'">
-                </div>
-                <div class="photo-frame">
-                    <img src="assets/photos/photo3.jpg" alt="Memory 3" onerror="this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500&auto=format&fit=crop'">
-                </div>
-                <div class="photo-frame">
-                    <img src="assets/photos/special.jpg" alt="Special Memory" onerror="this.src='https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=500&auto=format&fit=crop'">
+                <h2>The Golden Smile ✨</h2>
+                <p class="story-text">Your smile brings so much brightness into the world. Never stop shining and laughing out loud!</p>
+                <div class="btn-group">
+                    <button class="nav-btn prev-btn">❮ Back</button>
+                    <button class="main-btn next-btn">Next ❯</button>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Footer -->
-        <footer class="birthday-footer">
-            <p>Made with ❤️ just for you</p>
-        </footer>
+        <!-- Page 3: Memory 2 -->
+        <div class="page hidden" id="page-3">
+            <div class="card-content">
+                <span class="page-number">Page 2 of 6</span>
+                <div class="photo-frame">
+                    <img src="assets/photos/photo2.jpg" alt="Memory 2" onerror="this.src='https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&auto=format&fit=crop'">
+                </div>
+                <h2>Unforgettable Moments 📸</h2>
+                <p class="story-text">Every memory created with you is a cherishable treasure. Here’s to many more adventures together!</p>
+                <div class="btn-group">
+                    <button class="nav-btn prev-btn">❮ Back</button>
+                    <button class="main-btn next-btn">Next ❯</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 4: Memory 3 -->
+        <div class="page hidden" id="page-4">
+            <div class="card-content">
+                <span class="page-number">Page 3 of 6</span>
+                <div class="photo-frame">
+                    <img src="assets/photos/photo3.jpg" alt="Memory 3" onerror="this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&auto=format&fit=crop'">
+                </div>
+                <h2>Pure Magic 💖</h2>
+                <p class="story-text">Thank you for being the wonderful human you are. Your kindness and warmth mean the world!</p>
+                <div class="btn-group">
+                    <button class="nav-btn prev-btn">❮ Back</button>
+                    <button class="main-btn next-btn">Next ❯</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 5: Special Memory -->
+        <div class="page hidden" id="page-5">
+            <div class="card-content">
+                <span class="page-number">Page 4 of 6</span>
+                <div class="photo-frame">
+                    <img src="assets/photos/special.jpg" alt="Special Memory" onerror="this.src='https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=600&auto=format&fit=crop'">
+                </div>
+                <h2>A Special Place In My Heart 🌟</h2>
+                <p class="story-text">You hold a truly special place. May your life be filled with success, peace, and endless love.</p>
+                <div class="btn-group">
+                    <button class="nav-btn prev-btn">❮ Back</button>
+                    <button class="main-btn next-btn">Next ❯</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 6: Extra Wish Page -->
+        <div class="page hidden" id="page-6">
+            <div class="card-content">
+                <span class="page-number">Page 5 of 6</span>
+                <div class="photo-frame">
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=600&auto=format&fit=crop" alt="Extra Wish Photo">
+                </div>
+                <h2>Dream Big & Soar High 🚀</h2>
+                <p class="story-text">May all your dreams, big and small, turn into reality this year. Keep rocking as always!</p>
+                <div class="btn-group">
+                    <button class="nav-btn prev-btn">❮ Back</button>
+                    <button class="main-btn next-btn">Final Wish 🎂❯</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 7: Grand Finale / Birthday Cake -->
+        <div class="page hidden" id="page-7">
+            <div class="card-content text-center">
+                <div class="heart-icon">🎂</div>
+                <h1 class="name-title">Happy Birthday ANSHUU ❤️</h1>
+                <p class="story-text">Wishing you the happiest birthday ever! Stay blessed, keep smiling, and enjoy your special day to the fullest! 🎉🥳</p>
+                <div class="btn-group center-btn">
+                    <button class="nav-btn prev-btn">❮ Back</button>
+                    <button class="main-btn restart-btn">Restart Story 🔄</button>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script src="script.js"></script>
