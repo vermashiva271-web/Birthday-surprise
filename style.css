@@ -9,9 +9,7 @@ body {
     background: linear-gradient(135deg, #0f0c20, #1a103c, #2b0b3a);
     color: #ffffff;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100vw;
     overflow-x: hidden;
 }
 
@@ -32,20 +30,23 @@ body {
     cursor: pointer;
 }
 
-/* Storybook Container */
+/* Full Screen Container */
 .storybook-container {
-    width: 100%;
-    max-width: 420px;
-    min-height: 90vh;
+    width: 100vw;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px;
+    padding: 0;
 }
 
-/* Page Card Layout */
+/* Page Card Layout - Expanded Full Screen */
 .page {
-    width: 100%;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 0.5s ease-in-out;
 }
 
@@ -56,7 +57,7 @@ body {
 }
 
 .page.active {
-    display: block;
+    display: flex;
     opacity: 1;
     transform: scale(1) translateY(0);
 }
@@ -65,13 +66,16 @@ body {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 25px 20px;
-    border-radius: 24px;
+    padding: 30px 20px;
+    border-radius: 0;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
 }
 
 .text-center {
@@ -79,49 +83,51 @@ body {
 }
 
 .page-number {
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 1px;
     color: #ff9a9e;
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .heart-icon {
-    font-size: 48px;
-    margin-bottom: 10px;
+    font-size: 55px;
+    margin-bottom: 15px;
 }
 
 .glow-text {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
     background: linear-gradient(45deg, #ff7eb3, #ff758c, #ff9a9e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .subtitle {
-    font-size: 15px;
+    font-size: 16px;
     color: #dcd6f7;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .desc {
-    font-size: 13px;
+    font-size: 14px;
     color: #b8b5ff;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     line-height: 1.5;
+    max-width: 90%;
 }
 
-/* Photo Styling */
+/* Full Width Photo Frame */
 .photo-frame {
-    width: 100%;
-    height: 250px;
-    border-radius: 16px;
+    width: 90vw;
+    max-width: 500px;
+    height: 55vh;
+    border-radius: 18px;
     overflow: hidden;
-    margin-bottom: 18px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .photo-frame img {
@@ -131,31 +137,33 @@ body {
 }
 
 .card-content h2 {
-    font-size: 20px;
+    font-size: 22px;
     color: #ff758c;
     margin-bottom: 10px;
 }
 
 .name-title {
     font-family: 'Great Vibes', cursive;
-    font-size: 42px;
+    font-size: 52px;
     color: #fff;
-    text-shadow: 0 0 12px rgba(255, 117, 140, 0.8);
+    text-shadow: 0 0 15px rgba(255, 117, 140, 0.8);
     margin: 10px 0;
 }
 
 .story-text {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.6;
     color: #e2e2e2;
-    margin-bottom: 22px;
+    margin-bottom: 25px;
+    max-width: 90vw;
 }
 
 /* Buttons Styling */
 .btn-group {
     display: flex;
-    gap: 12px;
-    width: 100%;
+    gap: 15px;
+    width: 90vw;
+    max-width: 400px;
     justify-content: space-between;
 }
 
@@ -166,9 +174,9 @@ body {
 .main-btn {
     background: linear-gradient(45deg, #ff416c, #ff4b2b);
     border: none;
-    padding: 12px 22px;
+    padding: 14px 24px;
     color: white;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     border-radius: 30px;
     cursor: pointer;
@@ -178,11 +186,11 @@ body {
 }
 
 .nav-btn {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 14px 22px;
     color: white;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     border-radius: 30px;
     cursor: pointer;
