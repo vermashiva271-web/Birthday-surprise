@@ -3,33 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
+    <title>Happy Birthday ANSHUU ❤️</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="main-content">
-        <header class="hero">
-            <h1>Happy Birthday <span id="person-name">ANSHUU ❤️</span>!</h1>
-            <p>A special surprise created just for you 🎉</p>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="assets/music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Toggle Floating Button -->
+    <button id="music-btn" class="music-toggle" aria-label="Toggle Music">🎵</button>
+
+    <!-- Screen 1: Welcome & Surprise Envelope -->
+    <div id="welcome-screen" class="screen active">
+        <div class="card-container">
+            <div class="heart-icon">💖</div>
+            <h1 class="glow-text">A Special Surprise</h1>
+            <p class="subtitle">Created with love for <strong>ANSHUU ❤️</strong></p>
+            
+            <button id="open-surprise-btn" class="main-btn">
+                <span>Open Surprise ✨</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Screen 2: Main Birthday Content -->
+    <div id="surprise-screen" class="screen hidden">
+        <header class="birthday-header">
+            <h1 class="wishes-title">Happy Birthday</h1>
+            <h2 class="name-title">ANSHUU ❤️</h2>
+            <p class="sub-wishes">Wishing you endless happiness, laughter, and magical moments!</p>
         </header>
 
-        <section class="gallery">
-            <h2>Memories</h2>
+        <!-- Interactive Gift Card -->
+        <section class="section-card message-card">
+            <h3>💌 A Birthday Message</h3>
+            <p class="message-text">
+                May your special day be filled with warm smiles, joyful memories, and everything that brings delight to your heart! Happy Birthday! 🎂✨
+            </p>
+        </section>
+
+        <!-- Photo Gallery Grid -->
+        <section class="section-card gallery-section">
+            <h3>📸 Sweet Memories</h3>
             <div class="photo-grid">
-                <img src="assets/photos/photo1.jpg" alt="Memory 1">
-                <img src="assets/photos/photo2.jpg" alt="Memory 2">
-                <img src="assets/photos/photo3.jpg" alt="Memory 3">
-                <img src="assets/photos/special.jpg" alt="Special Memory">
+                <div class="photo-frame">
+                    <img src="assets/photos/photo1.jpg" alt="Memory 1" onerror="this.src='https://images.unsplash.com/photo-1513151233558-d860c5398176?w=500&auto=format&fit=crop'">
+                </div>
+                <div class="photo-frame">
+                    <img src="assets/photos/photo2.jpg" alt="Memory 2" onerror="this.src='https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500&auto=format&fit=crop'">
+                </div>
+                <div class="photo-frame">
+                    <img src="assets/photos/photo3.jpg" alt="Memory 3" onerror="this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500&auto=format&fit=crop'">
+                </div>
+                <div class="photo-frame">
+                    <img src="assets/photos/special.jpg" alt="Special Memory" onerror="this.src='https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=500&auto=format&fit=crop'">
+                </div>
             </div>
         </section>
 
-        <section class="message-box">
-            <h2>A Special Wish ✨</h2>
-            <p>Wishing you a day filled with love, joy, and unforgettable moments!</p>
-        </section>
+        <!-- Footer -->
+        <footer class="birthday-footer">
+            <p>Made with ❤️ just for you</p>
+        </footer>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-1
